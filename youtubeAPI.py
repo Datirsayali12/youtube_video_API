@@ -243,6 +243,7 @@ def fetch_data():
         }
         news_data.append(resp)
 
+
     # Process Lifestyle Data
     lifestyle_data = []
     for item in lifestyle:
@@ -263,6 +264,9 @@ def fetch_data():
             "slug": item["snippet"].get("title", ""),
         }
         lifestyle_data.append(resp)
+    lifestyle_data= list({v['youtubeLink']: v for v in lifestyle_data}.values())
+    entertainment_data=list({v['youtubeLink']: v for v in entertainment_data}.values())
+    news_data=list({v['youtubeLink']: v for v in news_data}.values())
 
     formatted_data = {
         "connect-artist-interview": [],
