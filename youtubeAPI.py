@@ -183,7 +183,7 @@ def fetch_data1():
 #
 #     print("saved data sucessfully")
 
-#fetch_data1()
+fetch_data1()
 
 scheduler.add_job(fetch_data1, 'interval',  hours=4, id='fetch_data1', replace_existing=True)
 @app.route('/connectOriginals', methods=['GET'])
