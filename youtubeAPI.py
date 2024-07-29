@@ -101,7 +101,7 @@ def fetch_data1():
     # download_data(API_key, entertainmentChannelID, "entertainment.json")
     download_data(API_key, lifestyleChannelID, "lifestyle.json")
 
-#fetch_data1()
+fetch_data1()
 
 
 
