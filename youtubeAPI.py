@@ -188,11 +188,11 @@ fetch_data1()
 scheduler.add_job(fetch_data1, 'interval',  hours=4, id='fetch_data1', replace_existing=True)
 @app.route('/connectOriginals', methods=['GET'])
 def fetch_data():
-    with open("data/entertainment.json", "r") as f:
+    with open("entertainment.json", "r") as f:
         entertainment = json.load(f)
-    with open("data/news.json", "r") as f:
+    with open("news.json", "r") as f:
         news = json.load(f)
-    with open("data/lifestyle.json", "r") as f:
+    with open("lifestyle.json", "r") as f:
         lifestyle = json.load(f)
 
     # Debugging: print the news data to ensure it's being read correctly
@@ -319,7 +319,7 @@ def fetch_news():
     end_index = page * records_per_page
 
     try:
-        with open("data/news.json", "r") as f:
+        with open("news.json", "r") as f:
             data = json.loads(f.read())
 
 
@@ -388,7 +388,7 @@ def fetch_entertainment():
     end_index = page * records_per_page
 
     try:
-        with open("data/entertainment.json", "r") as f:
+        with open("entertainment.json", "r") as f:
             data = json.loads(f.read())
 
         if not isinstance(data, list):
@@ -455,7 +455,7 @@ def fetch_lifestyle():
     end_index = page * records_per_page
 
     try:
-        with open("data/lifestyle.json", "r") as f:
+        with open("lifestyle.json", "r") as f:
             data = json.loads(f.read())
 
         if not isinstance(data, list):
