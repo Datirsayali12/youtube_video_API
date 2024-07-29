@@ -6,7 +6,7 @@ import datetime
 import uuid
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from flask import Flask, request, jsonify
+from flask import Flask, request,jsonify
 import requests
 from flask_cors import CORS
 from pytube import YouTube
@@ -101,7 +101,7 @@ def fetch_data1():
     # download_data(API_key, entertainmentChannelID, "entertainment.json")
     download_data(API_key, lifestyleChannelID, "lifestyle.json")
 
-fetch_data1()
+#fetch_data1()
 
 
 
@@ -514,4 +514,4 @@ def fetch_lifestyle():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
