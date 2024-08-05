@@ -19,7 +19,7 @@ now = datetime.datetime.now()
 app = Flask(__name__)
 CORS(app)
 
-API_key = "AIzaSyC83Ao_dUHSygFDzjVEoPWsK5aGfeUraoc"
+API_key = ""
 scheduler = BackgroundScheduler(timezone="Asia/Kolkata")
 scheduler.start()
 
@@ -100,8 +100,7 @@ def fetch_data1():
     download_data(API_key, newsroomChannelID,"news.json")
     download_data(API_key, entertainmentChannelID, "entertainment.json")
     download_data(API_key, lifestyleChannelID, "lifestyle.json")
-
-#fetch_data1()
+fetch_data1()
 
 
 
